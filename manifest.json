@@ -1,0 +1,59 @@
+{
+  "name": "TableToSheet",
+  "description": "Convert table to sheet",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webRequest",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/favicon-16x16.png",
+      "32": "/images/favicon-32x32.png",
+      "48": "/images/favicon-48x48.png",
+      "128": "/images/favicon-128x128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/favicon-16x16.png",
+    "32": "/images/favicon-32x32.png",
+    "48": "/images/favicon-48x48.png",
+    "128": "/images/favicon-128x128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "run_at": "document_end",
+      "all_frames": false,
+      "js": [
+        "lib/jquery-3.6.0.js",
+        "lib/xlsx.full.min.js",
+        "js/contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lib/jquery-3.6.0.js",
+        "lib/xlsx.full.min.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ]
+}

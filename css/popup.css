@@ -1,0 +1,17 @@
+.modal{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/*  */
+.flex{
+  display: flex;
+  gap: 10px;
+}
+
+.modal-section{
+  min-height: 100px;
+  padding: 20px;
+}
